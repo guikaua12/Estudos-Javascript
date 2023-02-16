@@ -1,30 +1,16 @@
 const express = require('express');
-const app = express();
-const stringify = require('json-stringify-safe');
+const path = require('path');
 
+const app = express();
 const port = process.env.PORT || 3000;
 
+app.set('view engine', 'ejs');
 
-// parâmetro por GET
+app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', function (req, res) {
-    const user = req.query.user;
-    // res.send(`Olá, seja bem vindo ${user}`);
-    res.send(req.query);
+    res.render('index');
 });
-
-// parâmetro por POST
-app.post('/', function (req, res) {
-    const user = req.headers.user;
-    res.send(`Olá, seja bem vindo ${user}`);
-});
-
-// parâmetro por URL
-app.get('/:user', function (req, res) {
-    const user = req.params.user;
-    res.send(`Olá, seja bem vindo ${user}`);
-});
-
 
 app.listen(port, e => {
-    console.log('Servidor escutando na porta '+port)
+    console.log('Servidor escutando na porta '+port);
 });
