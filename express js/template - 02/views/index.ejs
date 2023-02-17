@@ -2,9 +2,21 @@
 <html lang="pt-br">
 <%- include('partials/head.ejs'); %>
 <body>
-<%- include('partials/header.ejs'); %>
+<%- include('partials/header.ejs'); %> <!--header-->
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam assumenda corporis doloribus ducimus harum id magnam, maxime mollitia nostrum, officia provident rerum soluta temporibus ut velit vero! Vitae, voluptate.</p>
+<div class="wrapper">
+    <%- include('partials/navbar.ejs'); %> <!--navbar-->
+    <article class="content">
+        <h1>Seja bem vindo!</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab amet aspernatur atque corporis cum dolore dolores error eum laborum minima quidem quo, rerum, similique tempora totam voluptas voluptate. Consectetur.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi culpa doloremque doloribus molestias neque qui quo sequi voluptate? Accusantium, commodi cum esse et excepturi fugiat recusandae repellat reprehenderit saepe velit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab architecto atque consequuntur cum cupiditate dicta, dolorum enim explicabo facere, maiores neque nihil obcaecati perspiciatis porro sequi similique totam voluptas voluptatum.</p>
+
+    </article>
+</div>
+
+<%- include('partials/footer.ejs'); %> <!--footer-->
+
 
 <%- include('partials/foot.ejs'); %>
 </body>
