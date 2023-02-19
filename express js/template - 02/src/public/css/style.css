@@ -63,3 +63,9 @@ footer {
     width: 100%;
     padding: 20px;
 }
+
+.grow {
+    animation: spinner-grow .75s linear infinite;
+    display: block;
+    background-color: #4748D9;
+}
