@@ -1,19 +1,21 @@
 const mongoose = require('mongoose');
 
-function connect() {
-    mongoose.set('strictQuery', false);
-    mongoose.connect('mongodb://127.0.0.1:27017/?tls=false');
-    const db = mongoose.connection;
-    db.once('open', e => {
-        console.log('Conectado à database.')
-    });
+const database = {
+    connection: undefined,
+    connect: async function() {
+        mongoose.set('strictQuery', false);
+        this.connection = await mongoose.createConnection('mongodb://127.0.0.1:27017/caralho?tls=false');
+        this.connection.once('open', e => {
+            console.log('Conectado à database.')
+        });
 
-    db.on('error', e => {
-        console.error(e);
-    });
+        this.connection.on('error', e => {
+            console.error(e);
+        });
 
+    }
 }
 
-module.exports = {
-    connect
-}
+
+
+module.exports = database;
