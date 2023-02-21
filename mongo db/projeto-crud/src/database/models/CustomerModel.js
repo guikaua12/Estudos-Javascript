@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 
 // TODO: Fix field 'name' not indexing
 const schema = new mongoose.Schema({
-    name: { type: String, index: { unique: true } },
+    name: String,
     age: Number,
-    email: String,
+    email: { type: String, index: { unique: true } },
     password: String
 });
 

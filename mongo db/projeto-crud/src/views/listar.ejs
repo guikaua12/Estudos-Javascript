@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="pt-br">
+<%- include('partials/head') %>
+<body>
+<%- include('partials/navbar.ejs')  %>
+
+<% customers.forEach(customer => { %>
+    <div class="customer">
+        <span>Nome: <%- customer.name %> | Email: <%- customer.email %> | Idade: <%- customer.age %> </span>
+        <a href="#">[Editar]</a>
+    </div>
+<% }) %>
+
+</body>
+</html>
