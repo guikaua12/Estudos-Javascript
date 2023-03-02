@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const CustomerModel = require('../models/CustomerModel');
 const passwordUtils = require('../../utils/password');
 
